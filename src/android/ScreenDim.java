@@ -1,4 +1,4 @@
-package com.phonegap.build.screendim;
+package us.rcs.phonegap.plugins.screendim;
 
 import org.json.JSONArray;
 

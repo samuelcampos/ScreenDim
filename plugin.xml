@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-    xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="com.phonegap.build.screendim"
+    id="us.rcs.phonegap.plugins.screendim"
     version="1.0.0">
 
     <name>Screen Dim</name>
@@ -26,7 +25,7 @@
 
         <config-file target="res/xml/plugins.xml" parent="/plugins">
             <plugin name="ScreenDim"
-                    value="com.phonegap.build.screendim.ScreenDim" />
+                    value="us.rcs.phonegap.plugins.screendim.ScreenDim" />
         </config-file>
     </platform>
 </plugin>

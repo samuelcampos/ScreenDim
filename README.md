@@ -1,6 +1,7 @@
 # ScreenDim
 
-> PhoneGap/Cordova plugin for enabling/disabling screen dim
+> This is a fork of the PhoneGap/Cordova plugin for enabling/disabling screen dim from alunny. Modifications were made to make it hopefully compliant with PhoneGap Build for all to use.
+> Namespace was changed, as I hope to extend this, and wasn't sure on alunny's intention with the original plugin.
 
 ## Usage
 
