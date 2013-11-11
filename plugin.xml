@@ -5,6 +5,10 @@
     version="1.0.0">
 
     <name>Screen Dim</name>
+    
+    <description>
+    This is a fork of the PhoneGap/Cordova plugin for enabling/disabling screen dim from alunny. Modifications were made to make it hopefully compliant with PhoneGap Build for all to use. Namespace was changed, as I hope to extend this, and wasn't sure on alunny's intention with the original plugin.
+    </description>
 
     <asset src="www/screendim.js" target="screendim.js" />
 
