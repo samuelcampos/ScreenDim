@@ -2,12 +2,12 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="us.rcs.phonegap.plugins.screendim"
-    version="1.0.0">
+    version="1.0.1">
 
     <name>Screen Dim</name>
     
     <description>
-    This is a fork of the PhoneGap/Cordova plugin for enabling/disabling screen dim from alunny. Modifications were made to make it hopefully compliant with PhoneGap Build for all to use. Namespace was changed, as I hope to extend this, and wasn't sure on alunny's intention with the original plugin.
+        This is a fork of the PhoneGap/Cordova plugin for enabling/disabling screen dim from alunny. Modifications were made to make it hopefully compliant with PhoneGap Build for all to use. Namespace was changed, as I hope to extend this, and wasn't sure on alunny's intention with the original plugin.
     </description>
     
     <license>MIT</license>
