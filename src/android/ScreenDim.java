@@ -2,9 +2,9 @@ package us.rcs.phonegap.plugins.screendim;
 
 import org.json.JSONArray;
 
-import org.apache.cordova.api.Plugin;
-import org.apache.cordova.api.PluginResult;
-import org.apache.cordova.api.LOG;
+import org.apache.cordova.Plugin;
+import org.apache.cordova.PluginResult;
+import org.apache.cordova.LOG;
 
 import android.app.Activity;
 import android.view.WindowManager;
