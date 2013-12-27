@@ -8,6 +8,7 @@
 //  Updated for PhoneGap Build support by Matthew Rice
 
 #import "ScreenDimPlugin.h"
+#import <Cordova/CDV.h>
 
 @implementation ScreenDimPlugin
 
