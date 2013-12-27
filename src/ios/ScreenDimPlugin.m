@@ -11,15 +11,30 @@
 
 @implementation ScreenDimPlugin
 
-- (void) enable:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
-{	
-    [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
+- (void) enable:(CDVInvokedUrlCommand*)command {
+  NSString *callbackId = command.callbackId;
+
+  // Acquire a reference to the local UIApplication singleton
+  UIApplication* app = [UIApplication sharedApplication];
+
+  if (![app isIdleTimerDisabled]) {
+    [app setIdleTimerDisabled:true];
+  }
+  CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+  [self writeJavascript:[result toSuccessCallbackString:callbackId]];
 }
 
+- (void) disable:(CDVInvokedUrlCommand*)command {
+  NSString *callbackId = command.callbackId;
 
-- (void) disable:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options 
-{   
-    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+  // Acquire a reference to the local UIApplication singleton
+  UIApplication* app = [UIApplication sharedApplication];
+
+  if([app isIdleTimerDisabled]) {
+    [app setIdleTimerDisabled:false];
+  }
+  CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+  [self writeJavascript:[result toSuccessCallbackString:callbackId]];
 }
 
 @end
