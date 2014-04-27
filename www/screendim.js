@@ -1,20 +1,20 @@
-(function (gap) {
+(function (cordova) {
     // dims by default
     var on = true;
 
-    gap.screenDim = { };
+    cordova.screenDim = { };
 
-    gap.screenDim.enable = function () {
+    cordova.screenDim.enable = function () {
         on = true;
-        gap.exec(null, null, 'ScreenDim', 'enable', []);
+        cordova.exec(null, null, 'ScreenDim', 'enable', []);
     };
 
-    gap.screenDim.disable = function () {
+    cordova.screenDim.disable = function () {
         on = false;
-        gap.exec(null, null, 'ScreenDim', 'disable', []);
+        cordova.exec(null, null, 'ScreenDim', 'disable', []);
     };
 
-    gap.screenDim.toggle = function () {
+    cordova.screenDim.toggle = function () {
         if (on) {
             this.disable();
         } else {
