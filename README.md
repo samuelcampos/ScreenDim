@@ -1,27 +1,29 @@
 # ScreenDim
 
-> This is a fork of the PhoneGap/Cordova plugin for enabling/disabling screen dim from alunny. Modifications were made to make it hopefully compliant with PhoneGap Build for all to use.
-> Namespace was changed, as I hope to extend this, and wasn't sure on alunny's intention with the original plugin.
+> This is a fork of the PhoneGap/Cordova plugin for enabling/disabling screen dim from alunny. Modifications were made to make it compliant with Apache Cordova >= 3.4.0 for all to use.
 
 ## Usage
 
 ````html
 <script src="cordova.js"></script>
-<script src="screendim.js"></script>
+<script src="ScreenDim.js"></script>
 <script>
+    // initialize the ScreenDim plugin
+    var screenDim = new ScreenDim();
+
     // turn off the default screen dimming
     document.getElementById('turnoff').addEventListener('touchstart', function (e) {
-        cordova.screenDim.disable();
+        screenDim.disable();
     });
 
     // turn it back on
     document.getElementById('turnon').addEventListener('touchstart', function (e) {
-        cordova.screenDim.enable();
+        screenDim.enable();
     });
 
     // toggle it
     document.getElementById('toggle').addEventListener('touchstart', function (e) {
-        cordova.screenDim.toggle();
+        screenDim.toggle();
     });
 </script>
 ````
