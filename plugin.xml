@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android"
     id="org.apache.cordova.plugins.screendim.ScreenDim.plugin"
-    version="1.0.1">
+    version="1.0.2">
+	
+	<engines>
+    	<engine name="cordova" version=">=3.4.0" />
+	</engines>
 
+	
     <name>Screen Dim</name>
     
     <description>
@@ -11,6 +16,8 @@
     </description>
     
     <license>MIT</license>
+    <keywords>cordova,screen,dim</keywords>
+
 
     <asset src="www/screendim.js" target="screendim.js" />
 
@@ -27,11 +34,11 @@
     <!-- android -->
     <platform name="android">
         <source-file src="src/android/ScreenDim.java"
-                target-dir="src/com/phonegap/build/screendim" />
+                target-dir="src/org/apache/cordova/screendim" />
 
         <config-file target="res/xml/plugins.xml" parent="/plugins">
             <plugin name="ScreenDim"
-                    value="us.rcs.phonegap.plugins.screendim.ScreenDim" />
+                    value="org.apache.cordova.plugins.screendim.ScreenDim" />
         </config-file>
     </platform>
 </plugin>
