@@ -1,4 +1,4 @@
-package us.rcs.phonegap.plugins.screendim;
+package org.apache.cordova.plugins.screendim;
 
 import org.json.JSONArray;
 
@@ -10,7 +10,7 @@ import android.app.Activity;
 import android.view.WindowManager;
 import android.view.Window;
 
-public class ScreenDim extends Plugin {
+public class ScreenDim extends CordovaPlugin {
     public PluginResult execute(String action, JSONArray args, String callbackId) {
         if (action.equals("enable")) {
             enable();
@@ -32,7 +32,7 @@ public class ScreenDim extends Plugin {
     }
 
     protected Window getWindow() {
-        Activity ctxActivity = (Activity) ctx.getContext();
+        Activity ctxActivity = cordova.getActivity();
         return ctxActivity.getWindow();
     }
 }
