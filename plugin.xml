@@ -4,9 +4,15 @@
     id="org.apache.cordova.plugins.screendim.ScreenDim.plugin"
     version="1.0.2">
 	
+	<!--
 	<engines>
     	<engine name="cordova" version=">=3.4.0" />
 	</engines>
+	
+	<js-module src="www/ScreenDim.js" name="ScreenDim">
+        <clobbers target="ScreenDim" />
+    </js-module>
+	-->
 
 	
     <name>Screen Dim</name>
@@ -18,8 +24,7 @@
     <license>MIT</license>
     <keywords>cordova,screen,dim</keywords>
 
-
-    <asset src="www/screendim.js" target="screendim.js" />
+	<asset src="www/ScreenDim.js" target="ScreenDim.js" />
 
     <!-- ios -->
     <platform name="ios">
@@ -36,9 +41,10 @@
         <source-file src="src/android/ScreenDim.java"
                 target-dir="src/org/apache/cordova/screendim" />
 
-        <config-file target="res/xml/plugins.xml" parent="/plugins">
-            <plugin name="ScreenDim"
-                    value="org.apache.cordova.plugins.screendim.ScreenDim" />
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ScreenDim">
+            	<param name="android-package" value="org.apache.cordova.plugins.screendim.ScreenDim" />
+            </feature>
         </config-file>
     </platform>
 </plugin>

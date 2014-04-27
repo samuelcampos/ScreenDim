@@ -1,24 +1,27 @@
-(function (cordova) {
-    // dims by default
-    var on = true;
+var ScreenDim = function() {
+	// dims by default
+	this.on = true;
+	
+};
 
-    cordova.screenDim = { };
+ScreenDim.prototype.enable = function () {
+    this.on = true;
+    cordova.exec(null, null, 'ScreenDim', 'enable', []);
+};
 
-    cordova.screenDim.enable = function () {
-        on = true;
-        cordova.exec(null, null, 'ScreenDim', 'enable', []);
-    };
+ScreenDim.prototype.disable = function () {
+    this.on = false;
+    cordova.exec(null, null, 'ScreenDim', 'disable', []);
+};
 
-    cordova.screenDim.disable = function () {
-        on = false;
-        cordova.exec(null, null, 'ScreenDim', 'disable', []);
-    };
+ScreenDim.prototype.toggle = function () {
+    if (this.on) {
+        this.disable();
+    } else {
+        this.enable();
+    }
+};
 
-    cordova.screenDim.toggle = function () {
-        if (on) {
-            this.disable();
-        } else {
-            this.enable();
-        }
-    };
-}).call(this, (window.cordova || window.Cordova));
+ScreenDim.prototype.isEnabled = function () {
+	return this.on;
+};

@@ -1,9 +1,10 @@
 package org.apache.cordova.plugins.screendim;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 
 import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.PluginResult;
+import org.apache.cordova.CallbackContext;
 import org.apache.cordova.LOG;
 
 import android.app.Activity;
@@ -11,28 +12,35 @@ import android.view.WindowManager;
 import android.view.Window;
 
 public class ScreenDim extends CordovaPlugin {
-    public PluginResult execute(String action, JSONArray args, String callbackId) {
+
+	@Override
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {    	
+        LOG.d("CordovaLog", "Action: " + action);
+        
         if (action.equals("enable")) {
             enable();
+            return true;
         } else if (action.equals("disable")) {
             disable();
+            return true;
         }
 
-        return new PluginResult(PluginResult.Status.OK);
+        return false;
     }
 
     public void enable() {
-        LOG.d("CordovaLog", "Enable called");   
-        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    	cordova.getActivity().runOnUiThread(new Runnable() {
+                public void run() {
+        			cordova.getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        		}
+        	});
     }
 
     public void disable() {
-        LOG.d("CordovaLog", "Disable called");   
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-    }
-
-    protected Window getWindow() {
-        Activity ctxActivity = cordova.getActivity();
-        return ctxActivity.getWindow();
+    	cordova.getActivity().runOnUiThread(new Runnable() {
+                public void run() {  
+        			cordova.getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        		}
+        	});
     }
 }
